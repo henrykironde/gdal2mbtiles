@@ -13,4 +13,6 @@ future
 numexpr
 pyvips
 webcolors
-  
+pytest
+pytest-cov>=2.2.0
+pytest-randomly==3.10.1
