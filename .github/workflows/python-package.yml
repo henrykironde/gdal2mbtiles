@@ -48,6 +48,8 @@ jobs:
       - name: Install Env
         shell: bash
         run: |
+          sudo apt-get update
+          sudo apt-get install libgdal-dev=3.8.3
           conda config --prepend channels conda-forge
           conda config --set channel_priority strict
           conda create -n test python=${{ matrix.python-version }} libgdal geos=3.11 cython=3 numpy
