@@ -5,9 +5,9 @@ name: Python package
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "*" ]
 
 jobs:
   linting:
@@ -56,7 +56,7 @@ jobs:
           source activate test
           python -m pip install -e . --no-use-pep517 || python -m pip install -e .
           python -m pip install -r requirements-dev.txt
-          python -m pip install gdal
+          python -m pip install gdal -U
 
       - name: Check and Log Environment
         shell: bash
