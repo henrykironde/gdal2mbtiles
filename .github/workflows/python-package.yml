@@ -54,6 +54,7 @@ jobs:
           conda create -n test python=${{ matrix.python-version }} libgdal geos=3.11 cython=3 numpy
           source activate test
           conda install -c conda-forge gdal
+          conda install --channel conda-forge pyvips
           python -m pip install -e . --no-use-pep517 || python -m pip install -e .
           python -m pip install -r requirements-dev.txt
 
