@@ -50,7 +50,7 @@ jobs:
         run: |
           conda config --prepend channels conda-forge
           conda config --set channel_priority strict
-          conda install -c conda-forge gdal
+    
           conda create -n test python=${{ matrix.python-version }} libgdal geos=3.11 cython=3 numpy
           source activate test
           conda install -c conda-forge gdal
