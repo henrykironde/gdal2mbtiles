@@ -48,15 +48,14 @@ jobs:
       - name: Install Env
         shell: bash
         run: |
-          sudo apt-get update
-          sudo apt-get install libgdal-dev=3.8.3
           conda config --prepend channels conda-forge
           conda config --set channel_priority strict
+          conda install gdal-master::gdal
           conda create -n test python=${{ matrix.python-version }} libgdal geos=3.11 cython=3 numpy
           source activate test
           python -m pip install -e . --no-use-pep517 || python -m pip install -e .
           python -m pip install -r requirements-dev.txt
-          python -m pip install gdal
+
 
       - name: Check and Log Environment
         shell: bash
