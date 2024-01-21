@@ -55,6 +55,7 @@ jobs:
           source activate test
           conda install -c conda-forge gdal
           conda install --channel conda-forge pyvips
+          conda install -c conda-forge libvips
           conda install -c conda-forge distro
           python -m pip install -e . --no-use-pep517 || python -m pip install -e .
           python -m pip install -r requirements-dev.txt
